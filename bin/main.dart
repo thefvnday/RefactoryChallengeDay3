@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 //deretfibbonchi
 /*
@@ -69,4 +70,14 @@ void main(List<String> arguments) {
 //________________________________________________________________________________________
 // random string based on value of argument
 
-
+void main() {
+  print(getRandomString);  // 5GKjb
+  print(getRandomString(10)); // LZrJOTBNGA
+  print(getRandomString(15)); // PqokAO1BQBHyJVK
+}
+String getRandomString(int len) {
+  
+  int r = int.parse(stdin.readLineSync()!);  Random();
+  const _chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+  return List.generate(len, (index) => _chars[r.nextInt(_chars.length)]).join();
+}
